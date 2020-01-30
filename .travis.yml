@@ -1,0 +1,13 @@
+node_js:
+  - "10"
+  - "12"
+language: node_js
+before_install:
+  - npm i -g yarn@latest codecov@latest
+install:
+  - yarn
+script:
+  - yarn lint && yarn test
+after_success:
+  - yarn coverage
+  - codecov

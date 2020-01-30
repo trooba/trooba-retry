@@ -1,0 +1,43 @@
+{
+  "name": "trooba-retry",
+  "version": "1.0.0",
+  "description": "Trooba retry handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --collect-coverage",
+    "lint": "eslint --quiet -c .eslintrc **/*.js",
+    "lint-fix": "eslint --fix **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trooba/trooba-retry.git"
+  },
+  "keywords": [
+    "trooba",
+    "pipe",
+    "handler",
+    "retry",
+    "middleware"
+  ],
+  "author": "Dmytro Semenov <dimichsdg@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trooba/trooba-retry/issues"
+  },
+  "homepage": "https://github.com/trooba/trooba-retry#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-ebay": "^1.1.1",
+    "jest": "^25.1.0",
+    "trooba": "^2.1.2"
+  },
+  "dependencies": {
+    "klona": "^1.1.1"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/*.js"
+    ]
+  }
+}
