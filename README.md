@@ -1,6 +1,6 @@
 # trooba-retry
 
-Generic retry handler for [trooba](https://github.com/trooba) framework.
+Generic retry handler for [Trooba](https://github.com/trooba) framework.
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/trooba/trooba-retry.svg)](https://greenkeeper.io/)
 [![codecov](https://codecov.io/gh/trooba/trooba-retry/branch/master/graph/badge.svg)](https://codecov.io/gh/trooba/trooba-retry)
@@ -23,13 +23,12 @@ const Trooba = require('trooba');
 const pipe = Trooba
     .use(require('trooba-retry'), {
         retry: 1,            // number of retries for allowed operations
-        operations: ['GET],  // compares against request.operation or context.operation
+        operations: ['GET'], // compares against request.operation or context.operation
         codes: ['ETIMEDOUT'] // compares against err.code
     })
     .use(require('trooba-http-transport'), {
-        hostname: 'localhost',
-        port: 8000,
-        connectTimeout: 1 // 1ms, use small to make it timeout
+        hostname: 'https://www.ebay.com',
+        connectTimeout: 100
     })
     .build();
 
@@ -38,7 +37,7 @@ const client = pipe.create({
 });
 
 client.request({ foo: 'bar' }, (err, response) => {
-    console.log(err, response); // should retry one time and then return error
+    console.log(err, response);
 });
 ```
 
