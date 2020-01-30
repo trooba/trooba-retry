@@ -29,7 +29,7 @@ module.exports = (pipe, config = {}) => {
             pipe.context.retry.request && pipe.context.retry.request.forceRetry ||
             retryOperations.indexOf(pipe.context.retry.request.operation) > -1 ||
             retryOperations.indexOf(pipe.context.operation) > -1 ||
-            '*' in retryOperations) &&
+            retryOperations.indexOf('*') > -1) &&
             retryCodes.indexOf(err.code) > -1 &&
         maxRetries-- > 0;
     }
